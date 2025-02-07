@@ -1,5 +1,13 @@
 # SkipAmplify
 
+This package provides support for [AWS Amplify](https://aws.amazon.com/amplify/)
+for dual-platform [Skip](https://skip.tools) projects. It provides a unified
+interface for the
+[Amplify Swift SDK](https://github.com/aws-amplify/amplify-swift)
+and
+[Amplify Kotlin SDK](https://github.com/aws-amplify/amplify-android).
+
+
 This is a free [Skip](https://skip.tools) Swift/Kotlin library project containing the following modules:
 
 SkipAmplify

@@ -1,0 +1,15 @@
+# Configuration file for https://skip.tools project
+#
+# Kotlin dependencies and Gradle build options for this module can be configured here
+build:
+  contents:
+    - block: 'dependencies'
+      contents:
+        - 'implementation("com.amplifyframework:aws-analytics-pinpoint:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-api:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-auth-cognito:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-datastore:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-predictions:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-storage-s3:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-geo-location:2.26.0")'
+        - 'implementation("com.amplifyframework:aws-push-notifications-pinpoint:2.26.0")'
