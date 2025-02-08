@@ -6,3 +6,11 @@ build:
     - block: 'dependencies'
       contents:
         - 'implementation("com.amplifyframework:core-kotlin:2.26.0")'
+        # see https://github.com/aws-amplify/amplify-android?tab=readme-ov-file#java-8-requirement
+        - 'coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")'
+
+    - block: 'android'
+      contents:
+        - block: 'compileOptions'
+          contents:
+            - 'isCoreLibraryDesugaringEnabled = true'
