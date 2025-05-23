@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-only WITH LGPL-3.0-linking-exception
+#if !SKIP_BRIDGE
 import Foundation
 #if !SKIP
-import Amplify
+@preconcurrency import Amplify
 #else
 import com.amplifyframework.kotlin.core.__
 import com.amplifyframework.auth.__
@@ -32,6 +33,7 @@ public class SkipAmplify {
         #endif
     }
 
+    // SKIP @nobridge
     public static func signUp(username: String, password: String) async throws -> AuthSignUpResult {
         #if !SKIP
         try await Amplify.Auth.signUp(
@@ -58,3 +60,4 @@ public class SkipAmplify {
 
     }
 }
+#endif
