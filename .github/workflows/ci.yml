@@ -15,4 +15,6 @@ jobs:
   call-workflow:
     uses: skiptools/actions/.github/workflows/skip-framework.yml@v1
     with:
-      runs-on: "['macos-13', 'macos-14', 'macos-15']"
+      # needs macos-15 or else concurrency errors like:
+      # amplify-swift/Amplify/DevMenu/AmplifyDevMenu.swift:16:37: error: attribute can only be applied to declarations, not types
+      runs-on: "['macos-15']"
