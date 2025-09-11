@@ -8,21 +8,30 @@ let logger: Logger = Logger(subsystem: "SkipAmplify", category: "Tests")
 
 @available(macOS 13, *)
 final class SkipAmplifyTests: XCTestCase {
+    var apiValidation = true
 
-    func testSkipAmplify() throws {
+    func testAmplifyAPI() async throws {
         logger.log("running testSkipAmplify")
         XCTAssertEqual(1 + 2, 3, "basic test")
+        if apiValidation {
+            throw XCTSkip("test only exists to validate API parity")
+        }
+
+        let result = try await SkipAmplify.signUp(username: "user", password: "pass")
+        XCTAssertEqual("user", result.userID)
+        XCTAssertEqual(false, result.isSignUpComplete)
+        switch result.nextStep {
+        case .confirmUser(let details, let info, let id):
+            let _ = info
+            let _ = id
+            let _ = details?.destination
+            let _ = details?.attributeKey
+            break
+        case .completeAutoSignIn(let session):
+            break
+        case .done:
+            break
+        }
     }
 
-    func testDecodeType() throws {
-        // load the TestData.json file from the Resources folder and decode it into a struct
-        let resourceURL: URL = try XCTUnwrap(Bundle.module.url(forResource: "TestData", withExtension: "json"))
-        let testData = try JSONDecoder().decode(TestData.self, from: Data(contentsOf: resourceURL))
-        XCTAssertEqual("SkipAmplify", testData.testModuleName)
-    }
-
-}
-
-struct TestData : Codable, Hashable {
-    var testModuleName: String
 }
