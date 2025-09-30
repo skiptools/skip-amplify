@@ -17,4 +17,4 @@ jobs:
     with:
       # needs macos-15 or else concurrency errors like:
       # amplify-swift/Amplify/DevMenu/AmplifyDevMenu.swift:16:37: error: attribute can only be applied to declarations, not types
-      runs-on: "['macos-15']"
+      runs-on: "['macos-15-intel']"
