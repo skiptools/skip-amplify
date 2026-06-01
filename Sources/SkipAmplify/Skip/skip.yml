@@ -9,10 +9,10 @@ build:
   contents:
     - block: 'dependencies'
       contents:
-        - 'implementation("com.amplifyframework:core-kotlin:2.26.0")'
-        - 'implementation("com.amplifyframework:aws-auth-cognito:2.26.0")'
+        - 'implementation("com.amplifyframework:core-kotlin:2.37.0")'
+        - 'implementation("com.amplifyframework:aws-auth-cognito:2.37.0")'
         # see https://github.com/aws-amplify/amplify-android?tab=readme-ov-file#java-8-requirement
-        - 'coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")'
+        - 'coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")'
 
     - block: 'android'
       contents:

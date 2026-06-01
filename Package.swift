@@ -19,7 +19,7 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-model.git", from: "1.4.2"),
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
-        .package(url: "https://github.com/aws-amplify/amplify-swift.git", from: "2.45.4")
+        .package(url: "https://github.com/aws-amplify/amplify-swift.git", from: "2.58.1")
     ],
     targets: [
         .target(name: "SkipAmplify", dependencies: [
